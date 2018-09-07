@@ -1,0 +1,3 @@
+[submodule "examples/multistage/spring-music"]
+	path = examples/multistage/spring-music
+	url = https://github.com/cloudfoundry-samples/spring-music
