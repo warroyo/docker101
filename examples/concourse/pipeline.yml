@@ -1,0 +1,23 @@
+resources:
+- name: docker101
+  type: git
+  source:
+    uri: https://github.com/warroyo/docker101
+    branch: master
+
+- name: worker-image
+  type: docker-image
+  source:
+    username: ((harbor-username))
+    password: ((harbor-password))
+    repository: harbor.gcp.59s.io/59s/kube-worker
+
+jobs:
+- name: publish
+  public: true
+  serial: true
+  plan:
+  - get: docker101
+  - put: worker-image
+    params:
+      build: examples/concourse
