@@ -56,8 +56,9 @@ fly -t 59s set-pipeline -c pipeline.yml -p basic-image -v harbor-username=jason 
 #show worker file
 
 # deploy image
+fly -t 59s set-pipeline -c pipeline.yml -p kube-worker -v harbor-username=jason -v harbor-password=''
 
 #use image in pipeline
-
+fly -t 59s set-pipeline -c worker-pipeline.yml -p run-worker -v harbor-username=jason -v harbor-password=''
 
 

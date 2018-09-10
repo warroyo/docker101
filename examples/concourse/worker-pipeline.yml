@@ -1,0 +1,17 @@
+jobs:
+  - name: test-worker
+    plan:
+    - task: exec-worker
+      config:
+        platform: linux
+        image_resource:
+          type: docker-image
+          source: 
+            repository: harbor.gcp.59s.io/59s/kube-worker
+            tag: 1.0.0
+            username: ((harbor-username))
+            password: ((harbor-password))
+        run:
+          path: kubectl
+          args:
+          - --help
