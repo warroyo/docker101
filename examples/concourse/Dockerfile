@@ -3,8 +3,6 @@ FROM alpine:3.8
 LABEL maintainer="warroyo@pivotal.io"
 LABEL description="concourse worker docker image"
 
-ARG pivnet_token
-
 RUN apk update && apk add --no-cache curl bash jq ruby  && \
     apk add --no-cache --virtual .build-dependencies musl-dev gcc make g++ ruby-dev && \
     addgroup -g 1000 -S pa && \

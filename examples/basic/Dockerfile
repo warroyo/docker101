@@ -16,7 +16,7 @@ WORKDIR /app
 # install some tools and add a user and chnage permissions
 RUN apk update && apk add  --no-cache curl bash jq && \
     addgroup -g 1000 -S pa && \
-    adduser -u 1000 -S pa -G pa && \ 
+    adduser -u 1000 -S pa -G pa && \
     chown -R pa:pa /app && chmod 774 /app/start.sh
 
 # set the default user when the container starts
