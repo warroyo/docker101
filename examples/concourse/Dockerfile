@@ -17,11 +17,8 @@ RUN apk update && apk add --no-cache curl bash jq ruby  && \
     mv linux-amd64/helm /usr/local/bin/helm && \
     rm helm.tar.gz && \
     rm -rf linux-amd64  && \
-    gem install cf-uaac && \
+    gem install cf-uaac --no-ri --no-rdoc && \
     apk del .build-dependencies
-    # curl  -H "Authorization: Token " -Lo pks https://network.pivotal.io/api/v2/products/pivotal-container-service/releases/174703/product_files/198252/download
-    # chmod +x pks && \
-    # mv pks
 
 USER pa
 

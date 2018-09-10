@@ -39,7 +39,8 @@ docker run -it --rm --entrypoint=/bin/bash spring-music:1.0
 fly login -t 59s -u test -p test -c https://ci.59s.io/
 
 #push the pipeline
-fly -t 59s set-pipeline -c pipeline.yml -p basic-image
+fly -t 59s set-pipeline -c pipeline.yml -p basic-image -v harbor-username=jason -v harbor-password=''
+
 #run the pipeline
 
 

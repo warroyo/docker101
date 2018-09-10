@@ -20,4 +20,4 @@ jobs:
   - get: docker101
   - put: worker-image
     params:
-      build: examples/concourse
+      build: docker101/examples/concourse

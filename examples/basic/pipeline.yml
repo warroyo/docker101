@@ -20,4 +20,4 @@ jobs:
   - get: docker101
   - put: basic-image
     params:
-      build: examples/basic
+      build: docker101/examples/basic
