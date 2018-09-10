@@ -18,6 +18,8 @@ RUN apk update && apk add --no-cache curl bash jq ruby  && \
     gem install cf-uaac --no-ri --no-rdoc && \
     apk del .build-dependencies
 
+COPY --from=harbor.gcp.59s.io/59s/pks-cli:1.1.4 /usr/local/bin/pks /usr/local/bin/pks
+
 USER pa
 
 ENTRYPOINT ["/bin/bash"]
